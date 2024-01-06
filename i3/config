@@ -59,7 +59,8 @@ bindsym $mod+t exec alacritty
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id "rofi -show drun"
+# bindsym $mod+d exec --no-startup-id "rofi -show drun"
+bindsym $mod+d exec --no-startup-id "/home/nicknitride/.config/rofi/launchers/type-6/launcher.sh"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -191,7 +192,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+f exec thunar
 bindsym $mod+c exec code
 # Monitor
-exec_always --no-startup-id ~/.screenlayout/arandr_i3.sh
+exec_always --no-startup-id ~/dotfiles_and_themes/arandr_i3.sh
 # Restore Wallpaper On Startup
 exec_always --no-startup-id nitrogen --restore
 # Polybar
