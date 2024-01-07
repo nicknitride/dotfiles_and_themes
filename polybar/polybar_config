@@ -27,6 +27,9 @@
 ;   The README contains a lot of information
 ;
 ;==========================================================
+; Peachy Orange:
+;     Hex Code: #FFD8B1
+
 [settings]
 pseudo-transparency=true
 
@@ -34,7 +37,7 @@ pseudo-transparency=true
 ;background = ${xrdb:color0:#222}
 background = #000
 ; background = 00FFFFFF
-background-alt = #2e3440
+background-alt = #FFD8B1
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebcb8b
 foreground-alt = #ebcb8b
@@ -43,6 +46,9 @@ secondary = #b48ead
 tertiary = #5e81ac
 alert = #bf616a
 nord-white = #eceff4
+highlighted-text=#000
+orange-non-highlighted-text = #FFD8B1
+text-white = #FFF
 
 [bar/bar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -113,9 +119,9 @@ type = internal/xbacklight
 type = internal/xwindow
 label = %title:0:30:...%
 format-prefix = "󰬸 "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.highlighted-text}
 format-underline = ${colors.secondary}
-label-foreground = #fff
+label-foreground = ${colors.highlighted-text}
 format-background = ${colors.background-alt}
 format-padding = 2
 
@@ -183,7 +189,7 @@ menu-4-1-foreground = ${colors.success}
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
-wrapping-scroll = false
+wrapping-scroll = true
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
@@ -197,6 +203,7 @@ label-focused = %index%
 label-focused-background = ${colors.background-alt}
 ; label-focused-underline= ${colors.primary}
 label-focused-padding = 2
+label-focused-foreground = ${colors.highlighted-text}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
@@ -207,6 +214,7 @@ label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
+label-visible-foreground = ${colors.highlighted-text}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
@@ -267,7 +275,7 @@ bar-volume-foreground-4 = #d08770
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = ${colors.alert}
 bar-volume-gradient = false
-bar-volume-indicator = 
+bar-volume-indicator = 🐄
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
