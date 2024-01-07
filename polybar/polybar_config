@@ -51,7 +51,7 @@ orange-non-highlighted-text = #FFD8B1
 text-white = #FFF
 
 [bar/bar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:DP-1}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -90,7 +90,6 @@ modules-right = pulseaudio memory cpu powermenu
 
 tray-position = right
 tray-padding = 5px
-; tray-background = ${colors.background-alt}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -99,6 +98,50 @@ tray-padding = 5px
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
+
+scroll-up = #i3.prev
+scroll-down = #i3.next
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/smallmon]
+monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+; offset-y = 1%
+radius = 6.0
+fixed-center = true
+; Border-Radius (Rounded Corners)
+
+
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = JetBrainsMonoNL Nerd Font:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = fixed:pixelsize=10;1
+font-4 = Noto Emoji::scale=10;
+
+
+modules-left = i3 gcal-launcher xwindow
+modules-center = date
+modules-right = 
 
 scroll-up = #i3.prev
 scroll-down = #i3.next
@@ -192,7 +235,7 @@ index-sort = true
 wrapping-scroll = true
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
