@@ -85,10 +85,7 @@ font-4 = Noto Emoji::scale=10;
 
 modules-left = i3 gcal-launcher xwindow brightness_control
 modules-center = date
-modules-right = pulseaudio memory cpu powermenu 
-
-tray-position = right
-tray-padding = 5px
+modules-right = pulseaudio memory cpu powermenu tray
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -147,6 +144,13 @@ scroll-down = #i3.next
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/tray] 
+; updated method for displaying the tray
+type=internal/tray
+format=<tray>
+tray-padding= 2
+tray-foreground = ${colors.pref-text-color}
 
 [module/gcal-launcher]
 type=custom/text
