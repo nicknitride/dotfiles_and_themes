@@ -83,7 +83,7 @@ font-3 = fixed:pixelsize=10;1
 font-4 = Noto Emoji::scale=10;
 
 
-modules-left = i3 gcal-launcher xwindow brightness_control
+modules-left = i3 gcal-launcher xwindow brightness_control notif-bar
 modules-center = date
 modules-right = pulseaudio memory cpu powermenu tray
 
@@ -151,6 +151,26 @@ type=internal/tray
 format=<tray>
 tray-padding= 2
 tray-foreground = ${colors.pref-text-color}
+
+[module/notif-bar]
+alert-red = #bf616a
+type=custom/menu
+label-open =" Notifs 󰂚 " 
+label-open-background = ${colors.module-background}
+label-open-foreground = ${colors.highlighted-text}
+expand-right = true
+margin = 2 
+
+label-close = "Close 󰅙 <"
+label-close-foreground = ${self.alert-red}
+label-separator =|  
+
+menu-0-0 = " View Last "
+menu-0-0-exec = dunstctl history-pop
+menu-0-1 = " Silence "
+menu-0-1-exec = dunstctl set-paused true
+menu-0-2 = " Normal "
+menu-0-2-exec = dunstctl set-paused false
 
 [module/gcal-launcher]
 type=custom/text
