@@ -1,0 +1,24 @@
+Via the xorg configuration method #
+
+This method affects all window managers on your machine, so keep that in mind. Make a new file at /etc/X11/xorg.conf.d/touchpad-tap.conf and add the following:
+
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "NaturalScrolling" "true"
+        Option "Tapping" "on"
+        Option "TappingButtonMap" "lmr"
+EndSection
+
+We’re telling xorg to apply this configuration to any libinput touchpad on the system (but you could use the specific name of the device here if you want), and we’re enabling the tapping option.
+
+You can make this change effective immediately with:
+
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+The xorg configuration change takes effect when you log out of your X session or you reboot your computer.
+
+copy=paste the command below
+sudo cp ./90-touchpad-conf.conf /etc/X11/xorg.conf.d/
