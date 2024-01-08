@@ -1,3 +1,3 @@
 #!/usr/bin/sh
-
-cp -r ../Theme_Files/* /usr/share/
+sudo cp -r ../Theme_Files/icons/* /usr/share/icons/
+sudo cp -r ../Theme_Files/gtk/* /usr/share/themes/
