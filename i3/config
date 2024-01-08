@@ -11,14 +11,20 @@
 
 # Colors:
 # https://i3wm.org/docs/userguide.html#client_colors
-    client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-    client.unfocused        #2e3440 #1f222d #888888 #1f222d
-    client.focused_inactive #2e3440 #1f222d #888888 #1f222d
-    client.placeholder      #2e3440 #1f222d #888888 #1f222d
+# Nord: <colorclass> <border> <background> <text> <indicator> <child_border>
+    # client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+    # client.unfocused        #2e3440 #1f222d #888888 #1f222d
+    # client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+    # client.placeholder      #2e3440 #1f222d #888888 #1f222d
+    # client.urgent           #900000 #900000 #ffffff #900000
+    # client.background       #242424
+# New: <colorclass>        <border><background><text><indicator><child_border>
+    client.focused          #FFD8B1 #FFD8B1 #000000 #FFD8B1
+    client.unfocused        #FFD8B1 #000000 #ffffff #FFD8B1
+    client.focused_inactive #000000 #000000 #ffffff #000000
+    client.placeholder      #000000 #000000 #ffffff #000000
     client.urgent           #900000 #900000 #ffffff #900000
-    client.background       #242424
-
-
+    client.background       #000000
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
