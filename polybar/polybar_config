@@ -59,7 +59,7 @@ radius = 6.0
 fixed-center = true
 ; Border-Radius (Rounded Corners)
 separator = |
-
+separator-foreground = ${colors.alert}
 
 background = ${colors.background}
 foreground = ${colors.regular-text-color}
@@ -88,7 +88,7 @@ modules-center = date
 modules-right = pulseaudio memory cpu powermenu tray
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
