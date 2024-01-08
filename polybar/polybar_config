@@ -30,25 +30,24 @@
 ; Peachy Orange:
 ;     Hex Code: #FFD8B1
 
+;;;;;;;;;;;;;;;;;;;; Dependencies;;;;;;;;;;;;;;;
+; Fonts: JetBrains Mono Nerd Font, unifont, wuncon siji (manual install)
+; Brightness Module: redshift, ddcutil
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [settings]
 pseudo-transparency=true
 
 [colors]
-;background = ${xrdb:color0:#222}
 background = #000
-; background = 00FFFFFF
 background-alt = #FFD8B1
-;foreground = ${xrdb:color7:#222}
-foreground = #ebcb8b
-foreground-alt = #ebcb8b
+regular-text-color = #d8dee9
+pref-text-color = #ebcb8b
 primary = #ffb52a
 secondary = #b48ead
 tertiary = #5e81ac
 alert = #bf616a
-nord-white = #eceff4
 highlighted-text=#000
-orange-non-highlighted-text = #FFD8B1
-text-white = #FFF
 
 [bar/bar]
 monitor = ${env:MONITOR:DP-1}
@@ -59,11 +58,11 @@ height = 27
 radius = 6.0
 fixed-center = true
 ; Border-Radius (Rounded Corners)
-
+separator = |
 
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+foreground = ${colors.regular-text-color}
 
 line-size = 3
 line-color = #f00
@@ -74,7 +73,7 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
 font-0 = JetBrainsMonoNL Nerd Font:pixelsize=10;1
@@ -84,7 +83,7 @@ font-3 = fixed:pixelsize=10;1
 font-4 = Noto Emoji::scale=10;
 
 
-modules-left = i3 gcal-launcher xwindow
+modules-left = i3 gcal-launcher xwindow brightness_control
 modules-center = date
 modules-right = pulseaudio memory cpu powermenu 
 
@@ -118,7 +117,7 @@ fixed-center = true
 
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+foreground = ${colors.regular-text-color}
 
 line-size = 3
 line-color = #f00
@@ -151,22 +150,21 @@ cursor-scroll = ns-resize
 
 [module/gcal-launcher]
 type=custom/text
-content = 󰃭
+format ="󰃭" 
 click-left=firefox --new-window "https://calendar.google.com/calendar/u/0/r"
-content-margin = 1
-
-[module/backlight]
-type = internal/xbacklight
+format-margin = 1
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+; commented out the long text
+; label = %title:0:30:...%
+label = %class%
 format-prefix = "󰬸 "
 format-prefix-foreground = ${colors.highlighted-text}
 format-underline = ${colors.secondary}
 label-foreground = ${colors.highlighted-text}
 format-background = ${colors.background-alt}
-format-padding = 2
+format-padding = 1
 
 label-layout = %layout%
 ; label-layout-underline = ${colors.secondary}
@@ -176,6 +174,33 @@ label-layout = %layout%
 ; label-indicator-background = ${colors.secondary}
 ; label-indicator-underline = ${colors.secondary}
 ; radius = 10.0
+;;;;;;;;;;;;;;;;;;;;;;; Custom Modules;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; dependencies - redshift, 
+[module/brightness_control]
+alert-red = #bf616a
+custom-back = #d8dee9
+custom-text-color = #000
+
+type = custom/menu
+expand-right = true
+
+label-open-background = ${self.custom-back}
+label-open = " 󰃠  Brightness "
+label-open-foreground = ${self.custom-text-color}
+
+label-close = "Close 󰅙 <"
+label-close-foreground = ${self.alert-red}
+label-separator =|  
+
+menu-0-0 = "  Day "
+; menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 10 18 --display 2
+menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 12 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 && redshift -x
+menu-0-1 = " 󰽧 Night "
+menu-0-1-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -x
+menu-0-2 = " 󰊪 Reading"
+menu-0-2-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -O 4500
+; https://linuxcommandlibrary.com/man/redshift
+
 
 [module/powermenu]
 type = custom/menu
@@ -185,20 +210,20 @@ label-open = ""
 label-open-foreground = ${colors.secondary}
 label-close =  close menu
 label-close-foreground = ${colors.success}
-label-separator = |
+label-separator = /
 label-separator-foreground = ${colors.alert}
 ;Powermenu
 menu-0-0 = "Reboot "
-menu-0-0-exec = menu-open-1
+menu-0-0-exec = #powermenu.open.1
 menu-0-0-foreground = #ebcb8b
 menu-0-1 = "Power Off"
-menu-0-1-exec = menu-open-2
+menu-0-1-exec = #powermenu.open.2
 menu-0-1-foreground = ${colors.alert}
 menu-0-2 = "Hibernate"
-menu-0-2-exec = menu-open-3
+menu-0-2-exec = #powermenu.open.3
 menu-0-2-foreground = #a3be8c
 menu-0-3 = "Log Out"
-menu-0-3-exec = menu-open-4
+menu-0-3-exec = #powermenu.open.4
 menu-0-3-foreground = #d08770
 ;Reboot
 menu-1-0 = "Cancel "
@@ -272,7 +297,7 @@ label-urgent-padding = 2
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.pref-text-color}
 format-underline = ${colors.secondary}
 label = %percentage:2%%
 
@@ -280,9 +305,9 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-label-underline = ${colors.secondary}
-label = %percentage_used%%
+format-prefix-foreground = ${colors.pref-text-color}
+format-underline = ${colors.secondary}
+label = %gb_used%
 
 [module/date]
 type = internal/date
@@ -324,7 +349,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = ${colors.pref-text-color}
 
 [module/filesystem]
 type = internal/fs
