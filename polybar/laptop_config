@@ -50,7 +50,8 @@ alert = #bf616a
 highlighted-text=#000
 
 [bar/bar]
-monitor = ${env:MONITOR:DP-1}
+; monitor = ${env:MONITOR:DP-1}
+; set this up with xrandr later and specify the laptop screen
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -83,74 +84,17 @@ font-3 = fixed:pixelsize=10;1
 font-4 = Noto Emoji::scale=10;
 
 
-modules-left = i3 gcal-launcher xwindow brightness_control notif-bar
+modules-left = i3 gcal-launcher xwindow notif-bar
 modules-center = date
-modules-right = pulseaudio memory cpu powermenu tray
+modules-right = pulseaudio xbacklight memory cpu powermenu tray
 
-;wm-restack = bspwm
 wm-restack = i3
 
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
 scroll-up = #i3.prev
 scroll-down = #i3.next
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[bar/smallmon]
-monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 27
-;offset-x = 1%
-; offset-y = 1%
-radius = 6.0
-fixed-center = true
-; Border-Radius (Rounded Corners)
-
-
-
-background = ${colors.background}
-foreground = ${colors.regular-text-color}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = JetBrainsMonoNL Nerd Font:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = fixed:pixelsize=10;1
-font-4 = Noto Emoji::scale=10;
-
-
-modules-left = i3 gcal-launcher xwindow
-modules-center = date
-modules-right = 
-
-scroll-up = #i3.prev
-scroll-down = #i3.next
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/tray] 
-; updated method for displaying the tray
-type=internal/tray
-format=<tray>
-tray-padding= 2
-tray-foreground = ${colors.pref-text-color}
 
 [module/notif-bar]
 alert-red = #bf616a
@@ -198,34 +142,9 @@ label-layout = %layout%
 ; label-indicator-background = ${colors.secondary}
 ; label-indicator-underline = ${colors.secondary}
 ; radius = 10.0
+
 ;;;;;;;;;;;;;;;;;;;;;;; Custom Modules;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;; dependencies - redshift, 
-[module/brightness_control]
-alert-red = #bf616a
-custom-back = #d8dee9
-custom-text-color = #000
-
-type = custom/menu
-expand-right = true
-
-label-open-background = ${self.custom-back}
-label-open = " 󰃠  Brightness "
-label-open-foreground = ${self.custom-text-color}
-
-label-close = "Close 󰅙 <"
-label-close-foreground = ${self.alert-red}
-label-separator =|  
-
-menu-0-0 = "  Day "
-; menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 10 18 --display 2
-menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 12 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 && redshift -x
-menu-0-1 = " 󰽧 Night "
-menu-0-1-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 30 --display 1 && redshift -x
-menu-0-2 = " 󰊪 Reading"
-menu-0-2-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -O 4500
-; https://linuxcommandlibrary.com/man/redshift
-
-
 [module/powermenu]
 type = custom/menu
 expand-right = true
@@ -277,6 +196,7 @@ menu-4-0-foreground = #d08770
 menu-4-1 = "Cancel"
 menu-4-1-exec = menu-open-0
 menu-4-1-foreground = ${colors.success}
+
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -284,7 +204,7 @@ index-sort = true
 wrapping-scroll = true
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+pin-workspaces = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -315,7 +235,6 @@ label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
-
 
 [module/cpu]
 type = internal/cpu
@@ -375,32 +294,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.pref-text-color}
 
-[module/filesystem]
-type = internal/fs
-
-; Mountpoints to display
-; Default: / (new in version 3.7.0)
-mount-0 = /
-
-; Seconds to sleep between updates
-; Default: 30
-interval = 10
-
-; Display fixed precision values
-; Default: false
-fixed-values = true
-
-; Spacing (number of spaces, pixels, points) between entries
-; Default: 2
-spacing = 4
-
-; Default: 90
-; New in version 3.6.0
-warn-percentage = 75
-label-mounted = %mountpoint%:  %used% of %total%
-
-
-
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -412,28 +305,3 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
-[module/backlight]
-type = internal/xbacklight
-; Available tags:
-;   <label> (default)
-;   <ramp>
-;   <bar>
-format = <bar>
-
-; Available tokens:
-;   %percentage% (default)
-label = %percentage%%
-
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-; Only applies if <bar> is used
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─

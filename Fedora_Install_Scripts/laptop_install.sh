@@ -8,9 +8,6 @@ sudo dnf install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists fedora oci+https://registry.fedoraproject.org
 
-#Install base files
-sudo dnf install vlc polybar rofi pasystray blueman git lxappearance lsd corectrl lutris
-
 #VSCode Install
 sudo dnf upgrade --refresh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
