@@ -220,7 +220,7 @@ menu-0-0 = "  Day "
 ; menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 10 18 --display 2
 menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 12 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 && redshift -x
 menu-0-1 = " 󰽧 Night "
-menu-0-1-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -x
+menu-0-1-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 30 --display 1 && redshift -x
 menu-0-2 = " 󰊪 Reading"
 menu-0-2-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -O 4500
 ; https://linuxcommandlibrary.com/man/redshift
