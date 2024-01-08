@@ -236,10 +236,12 @@ exec --no-startup-id /usr/libexec/xfce-polkit
 # }
 
 # Needed Packages
-# Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar
+# Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar
 # Rofi, Nitrogen (Wallpaper Settings)
 # lxappearance - customize cursor
 # Polybar Wifi/Bluetooth/Sound
 # wifi - nm-applet, blueman (bluetooth manager) exec --no-startup-id blueman-applet &,
 # sound -pasystray, exec --no-startup-id pasystray
 # gnome-screenshot
+# redshift (for polybar reading mode)
+# ddcutil (for polybar brightness)
