@@ -237,6 +237,11 @@ for_window [class="copyq"] floating enable
 exec_always --no-startup-id copyq &
 bindsym $mod+Shift+v exec copyq show
 
+## Rofimoji 
+set $alt Mod1
+bindsym $mod+$alt+v exec rofimoji
+
+
 
 # Laptop Dependency List:
 # Fusuma 
