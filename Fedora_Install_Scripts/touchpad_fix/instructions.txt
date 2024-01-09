@@ -9,7 +9,7 @@ Section "InputClass"
         Driver "libinput"
         Option "NaturalScrolling" "true"
         Option "Tapping" "on"
-        Option "TappingButtonMap" "lmr"
+        Option "TappingButtonMap" "lrm"
 EndSection
 
 We’re telling xorg to apply this configuration to any libinput touchpad on the system (but you could use the specific name of the device here if you want), and we’re enabling the tapping option.
