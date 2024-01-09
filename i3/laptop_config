@@ -231,7 +231,14 @@ exec_always --no-startup-id nitrogen --restore
 ## touchpad gestures dependency "Fusuma" https://github.com/iberianpig/fusuma
 exec --no-startup-id /usr/local/bin/fusuma & 
 
+## clipboard manager for copy-pasting images
+# enable floating mode for all copyq windows
+for_window [class="copyq"] floating enable
+exec_always --no-startup-id copyq &
+bindsym $mod+Shift+v exec copyq show
+
 
 # Laptop Dependency List:
 # Fusuma 
 # brightnessctl
+# copyq

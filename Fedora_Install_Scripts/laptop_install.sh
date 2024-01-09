@@ -22,4 +22,4 @@ sudo dnf install gem
 sudo gem install fusuma
 
 ## Install TLP
-sudo dnf install tlp btrfs-assistant
+sudo dnf install tlp btrfs-assistant copyq
