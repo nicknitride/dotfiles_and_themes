@@ -20,3 +20,6 @@ flatpak install com.obsproject.Studio com.obsproject.Studio.Plugin.GStreamerVaap
 ### Install Fusuma (Touch Gestures)
 sudo dnf install gem
 sudo gem install fusuma
+
+## Install TLP
+sudo dnf install tlp
