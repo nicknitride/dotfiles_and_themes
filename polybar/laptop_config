@@ -32,7 +32,7 @@
 
 ;;;;;;;;;;;;;;;;;;;; Dependencies;;;;;;;;;;;;;;;
 ; Fonts: JetBrains Mono Nerd Font, unifont, wuncon siji (manual install)
-; Brightness Module: redshift, ddcutil
+; Brightness Module: redshift
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [settings]
@@ -84,9 +84,9 @@ font-3 = fixed:pixelsize=10;1
 font-4 = Noto Emoji::scale=10;
 
 
-modules-left = i3 gcal-launcher xwindow notif-bar
+modules-left = i3 gcal-launcher xwindow notif-bar laptop_night_light
 modules-center = date
-modules-right = pulseaudio xbacklight memory cpu powermenu tray
+modules-right = pulseaudio memory cpu  battery powermenu tray
 
 wm-restack = i3
 
@@ -95,6 +95,28 @@ scroll-down = #i3.next
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/laptop_night_light]
+alert-red = #bf616a
+custom-back = #d8dee9
+custom-text-color = #000
+
+type = custom/menu
+expand-right = true
+
+label-open-background = ${self.custom-back}
+label-open = " 󰃠  Night Light "
+label-open-foreground = ${self.custom-text-color}
+
+label-close = "Close 󰅙 <"
+label-close-foreground = ${self.alert-red}
+label-separator =|  
+
+menu-0-0 = "  Disable "
+menu-0-0-exec =  redshift -x
+menu-0-1 = " 󰊪 Enable "
+menu-0-1-exec = redshift -O 4500
+; https://linuxcommandlibrary.com/man/redshift
 
 [module/tray] 
 ; updated method for displaying the tray
@@ -440,17 +462,7 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-[module/backlight]
-type = internal/xbacklight
-; Available tags:
-;   <label> (default)
-;   <ramp>
-;   <bar>
-format = <bar>
 
-; Available tokens:
-;   %percentage% (default)
-label = %percentage%%
 
 ; Only applies if <ramp> is used
 ramp-0 = 🌕

@@ -188,6 +188,13 @@ bindsym $mod+b exec firefox
 bindsym $mod+f exec thunar
 bindsym $mod+c exec code
 
+
+# laptop keybindings 
+bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
+bindsym XF86MonBrightnessDown exec "brightnessctl set 10%"
+
+# Laptop dependencies: brightnessctl
+
 # Polybar
 exec_always --no-startup-id $HOME/dotfiles_and_themes/poly_start_laptop.sh &
 
@@ -217,3 +224,13 @@ exec --no-startup-id nm-applet &
 # bluetooth applet
 exec --no-startup-id blueman-applet &
 exec --no-startup-id pasystray &
+
+exec_always --no-startup-id nitrogen --restore
+
+## touchpad gestures dependency "Fusuma" https://github.com/iberianpig/fusuma
+exec --no-startup-id /usr/local/bin/fusuma & 
+
+
+# Laptop Dependency List:
+# Fusuma 
+# brightnessctl
