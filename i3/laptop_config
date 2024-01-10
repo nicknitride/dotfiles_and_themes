@@ -245,8 +245,8 @@ bindsym $mod+$alt+v exec rofimoji
 # exec_always --no-startup-id qlipper & 
 
 # gnome-screenshot
-# bindsym $mod+Shift+s exec "gnome-screenshot -i -c -a"
-# for_window [class="Gnome-screenshot"] floating enable
+bindsym $mod+Shift+s exec "gnome-screenshot -i -c -a"
+for_window [class="Gnome-screenshot"] floating enable
 
 # Laptop Dependency List:
 # Fusuma 
