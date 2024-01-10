@@ -238,7 +238,7 @@ bindsym $mod+Shift+v exec copyq show
 
 ## Rofimoji 
 set $alt Mod1
-bindsym $mod+$alt+v exec rofimoji
+bindsym $mod+$alt+space exec rofimoji
 
 # qlippy (Installl and replace copyq)
 # exec_always --no-startup-id qlipper & 

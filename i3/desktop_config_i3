@@ -264,7 +264,7 @@ for_window [class="Gnome-screenshot"] floating enable
 
 ## Rofimoji 
 set $alt Mod1
-bindsym $mod+$alt+v exec rofimoji
+bindsym $mod+$alt+space exec rofimoji
 
 # Needed Packages
 # Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar

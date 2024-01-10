@@ -62,7 +62,7 @@ APPSINCLUDED=("alacritty" "polybar" "i3")
 INTERNALFILENAMEARRAYDESKTOP=("alacritty.toml" "polybar_config" "desktop_config_i3")
 INTERNALFILENAMEARRAYLAPTOP=("alacritty.toml" "latop_config" "laptop_config")
 # Filenames used inside the dotfiles folder
-DESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config.ini")
+DESTINATIONFILENAMEARRAY=("alacritty.toml" "config.ini" "config")
 # Filenames used in the actual config folder
 
 read -p "Enter type [desktop/laptop] : " USERANSWERTYPE
