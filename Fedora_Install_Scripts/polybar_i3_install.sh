@@ -11,7 +11,3 @@ ln -s $(pwd)/polybar/laptop_config ~/.config/polybar/config.ini
 mkdir -p ~/.config/i3/
 rm ~/.config/i3/config
 ln -s $(pwd)/i3/laptop_config ~/.config/i3/config
-
-mkdir -p ~/.config/alacritty/
-echo "ln -s $(pwd)/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml"
-ln -s $(pwd)/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
