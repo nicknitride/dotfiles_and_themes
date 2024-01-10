@@ -211,7 +211,6 @@ bindsym $mod+ctrl+Right workspace next
 # keybinding to lock screen
 # bindsym $mod+Escape exec "i3lock -c 000000"
 bindsym $mod+Escape exec "i3lock -c 000000"
-bindsym $mod+Shift+s exec "gnome-screenshot -i"
 
 # auto lock the screen in 3 minutes
 exec "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000\""
