@@ -4,7 +4,7 @@
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
-    # monitor = 0
+    monitor = 0
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -17,7 +17,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    # follow = mouse
 
     ### Geometry ###
 
@@ -201,7 +201,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    icon_theme = Zafiro-Nord-Black
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -317,7 +317,7 @@
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    default_icon = /home/nicknitride/dotfiles_and_themes/Theme_Files/icons/Zafiro-Nord-Black/emblems/16/emblem-web.svg
 
 [urgency_normal]
     background = "#000000"
@@ -325,6 +325,8 @@
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
+    default_icon = /home/nicknitride/dotfiles_and_themes/Theme_Files/icons/Zafiro-Nord-Black/emblems/16/emblem-web.svg
+
 
 [urgency_critical]
     background = "#FFD8B1"
@@ -333,6 +335,8 @@
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
+    # default_icon = /home/nicknitride/dotfiles_and_themes/Theme_Files/icons/Zafiro-Nord-Black/emblems/16/emblem-web.svg
+
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
