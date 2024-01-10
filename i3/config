@@ -262,6 +262,10 @@ exec_always --no-startup-id qlipper &
 bindsym $mod+Shift+s exec "gnome-screenshot -i -c -a"
 for_window [class="Gnome-screenshot"] floating enable
 
+## Rofimoji 
+set $alt Mod1
+bindsym $mod+$alt+v exec rofimoji
+
 # Needed Packages
 # Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar
 # Rofi, Nitrogen (Wallpaper Settings)
@@ -273,3 +277,4 @@ for_window [class="Gnome-screenshot"] floating enable
 # redshift (for polybar reading mode)
 # ddcutil (for polybar brightness)
 # qlippy (clipboar manager)
+# rofimoji
