@@ -236,7 +236,7 @@ set $alt Mod1
 bindsym $mod+$alt+space exec rofimoji
 
 # qlippy (Installl and replace copyq)
-#exec --no-startup-id qlipper & 
+exec_always --no-startup-id qlipper & 
 
 # gnome-screenshot
 bindsym $mod+Shift+s exec "gnome-screenshot -i -c -a"
