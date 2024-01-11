@@ -230,18 +230,13 @@ exec_always --no-startup-id nitrogen --restore
 ## touchpad gestures dependency "Fusuma" https://github.com/iberianpig/fusuma
 exec --no-startup-id /usr/local/bin/fusuma & 
 
-## clipboard manager for copy-pasting images
-# enable floating mode for all copyq windows
-for_window [class="copyq"] floating enable
-exec_always --no-startup-id copyq &
-bindsym $mod+Shift+v exec copyq show
 
 ## Rofimoji 
 set $alt Mod1
 bindsym $mod+$alt+space exec rofimoji
 
 # qlippy (Installl and replace copyq)
-# exec_always --no-startup-id qlipper & 
+#exec --no-startup-id qlipper & 
 
 # gnome-screenshot
 bindsym $mod+Shift+s exec "gnome-screenshot -i -c -a"

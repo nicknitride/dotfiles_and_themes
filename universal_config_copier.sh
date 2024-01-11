@@ -8,7 +8,7 @@ DOTFILESDIRPATH="${HOME}/dotfiles_and_themes"
 function homeSymLink {
     APPLICATIONNAME="${1}" 
     INTERNALFILENAME="${2}" # The filename used inside the dotfiles folder
-    CONFIGFOLDERFILENAME="${3}" # Final filename for the symoblic link
+    CONFIGFOLDERFILENAME="${3}" # Final filename for the symbolic link
     ACTUALCONFIGFILEPATH="${CONFIGFILEPATH}/${APPLICATIONNAME}/${CONFIGFOLDERFILENAME}"
     INTERNALLOCATION="${DOTFILESDIRPATH}/${APPLICATIONNAME}/${INTERNALFILENAME}"
 
@@ -60,9 +60,9 @@ function homeSymArrayCall {
 APPSINCLUDED=("alacritty" "polybar" "i3" "dunst")
 # Helps us navigate both the dotfile and config folders
 INTERNALFILENAMEARRAYDESKTOP=("alacritty.toml" "polybar_config" "desktop_config_i3" "dunstrc")
-INTERNALFILENAMEARRAYLAPTOP=("alacritty.toml" "latop_config" "laptop_config" "dunstrc")
+INTERNALFILENAMEARRAYLAPTOP=("alacritty.toml" "laptop_config" "laptop_config" "dunstrc")
 # Filenames used inside the dotfiles folder
-DESTINATIONFILENAMEARRAY=("alacritty.toml" "config.ini" "config" "dunstrc")
+DESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config" "dunstrc")
 # Filenames used in the actual config folder
 
 read -p "Enter type [desktop/laptop] : " USERANSWERTYPE
