@@ -258,7 +258,7 @@ bindsym $mod+$alt+space exec rofimoji
 # Betterlockscreen
 # auto lock the screen in 3 minutes
 exec "xautolock -detectsleep -time 5 -locker \"betterlockscreen -l dim\""
-bindsym $mod+Escape exec "betterlockscreen -l dim"
+bindsym $mod+Escape exec "betterlockscreen -l dimblur"
 
 # Needed Packages
 # Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar
