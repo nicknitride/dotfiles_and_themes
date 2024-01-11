@@ -43,10 +43,6 @@ exec --no-startup-id dex --autostart --environment i3
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -226,13 +222,6 @@ gaps inner 8
 # bindsym ctrl+
 bindsym $mod+ctrl+Left workspace prev
 bindsym $mod+ctrl+Right workspace next
-# i3 lock screen
-# keybinding to lock screen
-# bindsym $mod+Escape exec "i3lock -c 000000"
-bindsym $mod+Escape exec "i3lock -i /home/nicknitride/dotfiles_and_themes/i3/i3lock_walls/main.png"
-
-# auto lock the screen in 3 minutes
-exec "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000\""
 
 
 # sound
@@ -266,7 +255,10 @@ for_window [class="Gnome-screenshot"] floating enable
 set $alt Mod1
 bindsym $mod+$alt+space exec rofimoji
 
-
+# Betterlockscreen
+# auto lock the screen in 3 minutes
+exec "xautolock -detectsleep -time 5 -locker \"betterlockscreen -l dim\""
+bindsym $mod+Escape exec "betterlockscreen -l dim"
 
 # Needed Packages
 # Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar
@@ -280,3 +272,6 @@ bindsym $mod+$alt+space exec rofimoji
 # ddcutil (for polybar brightness)
 # qlippy (clipboar manager)
 # rofimoji
+# Github Dependencies:
+# Betterlockscreen 
+# i3lock-color dependency https://github.com/Raymo111/i3lock-color
