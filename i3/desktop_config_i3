@@ -260,6 +260,10 @@ bindsym $mod+$alt+space exec rofimoji
 exec "xautolock -detectsleep -time 5 -locker \"betterlockscreen -l blur\""
 bindsym $mod+Escape exec "betterlockscreen -l blur"
 
+# The following keybinds depend on the polybar mpris tail module to work
+bindsym XF86AudioPlay exec "/home/nicknitride/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py play-pause &"
+bindsym XF86AudioPrev exec "~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py previous &"
+bindsym XF86AudioNext exec "~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py next &"
 # Needed Packages
 # Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar
 # Rofi, Nitrogen (Wallpaper Settings)
