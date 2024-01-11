@@ -1,0 +1,433 @@
+;==========================================================
+;
+; THIS IS AN EXAMPLE CONFIGURATION FILE!
+; IT IS NOT SUPPOSED TO WORK OUT OF THE BOX SINCE IS CONTAINS
+; SETTINGS THAT ARE SPECIFIC TO THE MACHINE WHICH WAS USED
+; TO GENERATE IT.
+; Please refer to the web documentation hosted at:
+; https://github.com/polybar/polybar#configuration
+; and
+; https://github.com/polybar/polybar/wiki/Configuration
+; if you want to automatically generate one for you.
+;
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+; Peachy Orange:
+;     Hex Code: #FFD8B1
+
+;;;;;;;;;;;;;;;;;;;; Dependencies;;;;;;;;;;;;;;;
+; Fonts: JetBrains Mono Nerd Font, unifont, wuncon siji (manual install)
+; Brightness Module: redshift, ddcutil
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[settings]
+; pseudo-transparency=true
+
+[colors]
+;;;;;;;;;;; Default
+; background = #000
+; module-background = #FFD8B1
+; regular-text-color = #d8dee9
+; pref-text-color = #ebcb8b
+; primary = #ffb52a
+; secondary = #b48ead
+; tertiary = #5e81ac
+; alert = #bf616a
+; highlighted-text=#000
+;;;;;;;;;;; Picom
+background = #00000000
+module-background = #FFD8B1
+regular-text-color = #d8dee9
+pref-text-color = #ebcb8b
+primary = #ffb52a
+secondary = #b48ead
+tertiary = #5e81ac
+alert = #bf616a
+highlighted-text=#FF000000
+
+
+
+[bar/bar]
+monitor = ${env:MONITOR:DP-1}
+width = 100%
+height = 27
+;offset-x = 1%
+; offset-y = 1%
+fixed-center = true
+; Border-Radius (Rounded Corners)
+separator = |
+separator-foreground = ${colors.alert}
+
+background = ${colors.background}
+foreground = ${colors.regular-text-color}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = JetBrainsMonoNL Nerd Font:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = fixed:pixelsize=10;1
+font-4 = Noto Emoji::scale=10;
+
+
+modules-left = i3 gcal-launcher xwindow brightness_control notif-bar
+modules-center = date
+modules-right = player-mpris-tail memory cpu powermenu tray
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+scroll-up = #i3.prev
+scroll-down = #i3.next
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/smallmon]
+monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+; offset-y = 1%
+fixed-center = true
+; Border-Radius (Rounded Corners)
+
+
+
+background = ${colors.background}
+foreground = ${colors.regular-text-color}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = JetBrainsMonoNL Nerd Font:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = fixed:pixelsize=10;1
+font-4 = Noto Emoji::scale=10;
+
+
+modules-left = i3 gcal-launcher xwindow
+modules-center = date
+modules-right = 
+
+scroll-up = #i3.prev
+scroll-down = #i3.next
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/tray] 
+; updated method for displaying the tray
+type=internal/tray
+format=<tray>
+tray-padding= 2
+
+[module/notif-bar]
+alert-red = #bf616a
+type=custom/menu
+label-open =" Notifs 󰂚 " 
+label-open-background = ${colors.module-background}
+label-open-foreground = ${colors.highlighted-text}
+expand-right = true
+margin = 2 
+
+label-close = "Close 󰅙 <"
+label-close-foreground = ${self.alert-red}
+label-separator =|  
+
+menu-0-0 = " View Last "
+menu-0-0-exec = dunstctl history-pop
+menu-0-1 = " Silence "
+menu-0-1-exec = dunstctl set-paused true
+menu-0-2 = " Normal "
+menu-0-2-exec = dunstctl set-paused false
+
+[module/gcal-launcher]
+type=custom/text
+format ="󰃭" 
+click-left=firefox --new-window "https://calendar.google.com/calendar/u/0/r"
+format-margin = 1
+
+[module/xwindow]
+type = internal/xwindow
+; commented out the long text
+; label = %title:0:30:...%
+label = %class%
+format-prefix = "󰬸 "
+format-prefix-foreground = ${colors.highlighted-text}
+format-underline = ${colors.secondary}
+label-foreground = ${colors.highlighted-text}
+format-background = ${colors.module-background}
+format-padding = 1
+
+label-layout = %layout%
+; label-layout-underline = ${colors.secondary}
+
+; label-indicator-padding = 5
+; label-indicator-margin = 1
+; label-indicator-background = ${colors.secondary}
+; label-indicator-underline = ${colors.secondary}
+; radius = 10.0
+;;;;;;;;;;;;;;;;;;;;;;; Custom Modules;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; dependencies - redshift, 
+[module/brightness_control]
+alert-red = #bf616a
+custom-back = #d8dee9
+custom-text-color = #000
+
+type = custom/menu
+expand-right = true
+
+label-open-background = ${self.custom-back}
+label-open = " 󰃠  Brightness "
+label-open-foreground = ${self.custom-text-color}
+
+label-close = "Close 󰅙 <"
+label-close-foreground = ${self.alert-red}
+label-separator =|  
+
+menu-0-0 = "  Day "
+; menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 10 18 --display 2
+menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 12 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 && redshift -x
+menu-0-1 = " 󰽧 Night "
+menu-0-1-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 30 --display 1 && redshift -x
+menu-0-2 = " 󰊪 Reading"
+menu-0-2-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -O 4500
+; https://linuxcommandlibrary.com/man/redshift
+
+
+[module/powermenu]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+label-open = ""
+label-open-foreground = ${colors.secondary}
+label-close =  close menu
+label-close-foreground = ${colors.success}
+label-separator = /
+label-separator-foreground = ${colors.alert}
+;Powermenu
+menu-0-0 = "Reboot "
+menu-0-0-exec = #powermenu.open.1
+menu-0-0-foreground = #ebcb8b
+menu-0-1 = "Power Off"
+menu-0-1-exec = #powermenu.open.2
+menu-0-1-foreground = ${colors.alert}
+menu-0-2 = "Sleep"
+menu-0-2-exec = #powermenu.open.3
+menu-0-2-foreground = #a3be8c
+menu-0-3 = "Log Out"
+menu-0-3-exec = #powermenu.open.4
+menu-0-3-foreground = #d08770
+;Reboot
+menu-1-0 = "Cancel "
+menu-1-0-exec = menu-open-0
+menu-1-0-foreground = ${colors.success}
+menu-1-1 = "Reboot"
+menu-1-1-exec = systemctl reboot
+menu-1-1-foreground = #ebcb8b
+;Shutdown
+menu-2-0 = "Power off"
+menu-2-0-exec = systemctl poweroff
+menu-2-0-foreground = ${colors.alert}
+menu-2-1 = "Cancel "
+menu-2-1-exec = menu-open-0
+menu-2-1-foreground = ${colors.success}
+;Hibernate
+menu-3-0 = "Sleep "
+menu-3-0-exec = systemctl suspend
+menu-3-0-foreground = #a3be8c
+menu-3-1 = "Cancel"
+menu-3-1-exec = menu-open-0
+menu-3-1-foreground = ${colors.success}
+;Log-Out
+menu-4-0 = "Log Out "
+menu-4-0-exec = i3-msg exit
+menu-4-0-foreground = #d08770
+menu-4-1 = "Cancel"
+menu-4-1-exec = menu-open-0
+menu-4-1-foreground = ${colors.success}
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = true
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.module-background}
+; label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+label-focused-foreground = ${colors.highlighted-text}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+label-visible-foreground = ${colors.highlighted-text}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.pref-text-color}
+format-underline = ${colors.secondary}
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.pref-text-color}
+format-underline = ${colors.secondary}
+label = %gb_used%
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a,%b. %d"
+
+time ="%I:%M %p"
+
+format = 󰥔 <label>
+format-foreground= #ebcb8b
+; format-underline = #fff
+
+label =%time% %date% 
+label-foreground = #fff
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇 muted
+label-muted-foreground = ${colors.alert}
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.tertiary}
+bar-volume-foreground-1 = ${colors.tertiary}
+bar-volume-foreground-2 = ${colors.tertiary}
+bar-volume-foreground-3 = ${colors.tertiary}
+bar-volume-foreground-4 = #d08770
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = ${colors.alert}
+bar-volume-gradient = false
+bar-volume-indicator = 🐄
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.pref-text-color}
+
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+; Default: / (new in version 3.7.0)
+mount-0 = /
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing (number of spaces, pixels, points) between entries
+; Default: 2
+spacing = 4
+
+; Default: 90
+; New in version 3.6.0
+warn-percentage = 75
+label-mounted = %mountpoint%:  %used% of %total%
+
+
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py -f '{icon} {:artist:t20:{artist}:}{:artist: - :}{:t20:{title}:}'
+tail = true
+click-middle = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py previous &
+click-right = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py next &
+click-left = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py play-pause &
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+

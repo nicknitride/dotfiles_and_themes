@@ -68,16 +68,30 @@ APPSINCLUDEDDESKTOP=("alacritty" "polybar" "i3" "dunst" "betterlockscreen")
 DESKINTERNALFILENAME=("alacritty.toml" "polybar_config" "desktop_config_i3" "dunstrc" "betterlockscreenrc")
 DESKDESTINATIONFILENAME=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc")
 
+APPDESKPICOM=("alacritty" "polybar" "i3" "dunst" "betterlockscreen" "picom")
+DESKPICOMINTERNALFILENAME=("alacritty.toml" "polybar_config_with_picom" "desktop_config_i3_with_picom" "dunstrc" "betterlockscreenrc" "picom.conf")
+DESKPICOMDESTINATIONFILENAME=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc" "picom.conf")
+
 
 BASICAPPS=("alacritty" "polybar" "i3" "dunst")
 BASICINTERNALFILENAMES=("alacritty.toml" "polybar_no_dependencies" "i3_no_dependencies" "dunstrc")
 BASICDESTINATION=("alacritty.toml" "config" "config" "dunstrc")
 
-read -p "Enter type [desktop/laptop/basic] : " USERANSWERTYPE
+read -p "Enter type [1. desktop/2. laptop/3. basic] : " USERANSWERTYPE
     case $USERANSWERTYPE in
     [1] | [dD][eE][sS][kK][tT][oO][pP])
-    homeSymArrayCall APPSINCLUDEDDESKTOP DESKINTERNALFILENAME DESKDESTINATIONFILENAME
-    echo "done"
+    read -p "with picom [y/n]? : " SECONDUSERANSWER
+        if [ ${SECONDUSERANSWER} == "y" ] || [ ${SECONDUSERANSWER} == "Y" ]
+            then
+                echo "Installing desktop config with picom"
+                homeSymArrayCall APPDESKPICOM DESKPICOMINTERNALFILENAME DESKPICOMDESTINATIONFILENAME
+        elif [ ${SECONDUSERANSWER} == "n" ] || [ ${SECONDUSERANSWER} == "N"  ] 
+            then 
+                echo "Chosen the non-picom option"
+                homeSymArrayCall APPSINCLUDEDDESKTOP DESKINTERNALFILENAME DESKDESTINATIONFILENAME   
+            else
+                echo "Please enter a valid response"
+        fi 
     ;;
     [2] | [lL][aA][pP][tT][oO][pP])
     homeSymArrayCall LAPTOPAPPSINCLUDED INTERNALFILENAMEARRAYLAPTOP LAPTOPDESTINATIONFILENAMEARRAY
