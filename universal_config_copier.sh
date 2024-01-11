@@ -57,22 +57,35 @@ function homeSymArrayCall {
     done
 }
 
-APPSINCLUDED=("alacritty" "polybar" "i3" "dunst")
+LAPTOPAPPSINCLUDED=("alacritty" "polybar" "i3" "dunst")
 # Helps us navigate both the dotfile and config folders
-INTERNALFILENAMEARRAYDESKTOP=("alacritty.toml" "polybar_config" "desktop_config_i3" "dunstrc")
 INTERNALFILENAMEARRAYLAPTOP=("alacritty.toml" "laptop_config" "laptop_config" "dunstrc")
 # Filenames used inside the dotfiles folder
-DESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config" "dunstrc")
+LAPTOPDESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config" "dunstrc")
 # Filenames used in the actual config folder
 
-read -p "Enter type [desktop/laptop] : " USERANSWERTYPE
+APPSINCLUDEDDESKTOP=("alacritty" "polybar" "i3" "dunst" "betterlockscreen")
+DESKINTERNALFILENAME=("alacritty.toml" "polybar_config" "desktop_config_i3" "dunstrc" "betterlockscreenrc")
+DESKDESTINATIONFILENAME=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc")
+
+
+BASICAPPS=("alacritty" "polybar" "i3" "dunst")
+BASICINTERNALFILENAMES=("alacritty.toml" "polybar_no_dependencies" "i3_no_dependencies" "dunstrc")
+BASICDESTINATION=("alacritty.toml" "config" "config" "dunstrc")
+
+read -p "Enter type [desktop/laptop/basic] : " USERANSWERTYPE
     case $USERANSWERTYPE in
-    [dD][eE][sS][kK][tT][oO][pP])
-    homeSymArrayCall APPSINCLUDED INTERNALFILENAMEARRAYDESKTOP DESTINATIONFILENAMEARRAY
+    [1] | [dD][eE][sS][kK][tT][oO][pP])
+    homeSymArrayCall APPSINCLUDEDDESKTOP DESKINTERNALFILENAME DESKDESTINATIONFILENAMEFILENAME
     echo "done"
     ;;
-    [lL][aA][pP][tT][oO][pP])
-    homeSymArrayCall APPSINCLUDED INTERNALFILENAMEARRAYLAPTOP DESTINATIONFILENAMEARRAY
+    [2] | [lL][aA][pP][tT][oO][pP])
+    homeSymArrayCall LAPTOPAPPSINCLUDED INTERNALFILENAMEARRAYLAPTOP LAPTOPDESTINATIONFILENAMEARRAY
+    echo "done"
+    ;;
+    [3] | [bB][aA][sS][iI][cC])
+    homeSymArrayCall BASICAPPS BASICINTERNALFILENAMES BASICDESTINATION
+    echo "done"
     ;;
     *)
     echo "Not a valid option"
