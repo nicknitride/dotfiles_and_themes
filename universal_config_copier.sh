@@ -76,7 +76,7 @@ BASICDESTINATION=("alacritty.toml" "config" "config" "dunstrc")
 read -p "Enter type [desktop/laptop/basic] : " USERANSWERTYPE
     case $USERANSWERTYPE in
     [1] | [dD][eE][sS][kK][tT][oO][pP])
-    homeSymArrayCall APPSINCLUDEDDESKTOP DESKINTERNALFILENAME DESKDESTINATIONFILENAMEFILENAME
+    homeSymArrayCall APPSINCLUDEDDESKTOP DESKINTERNALFILENAME DESKDESTINATIONFILENAME
     echo "done"
     ;;
     [2] | [lL][aA][pP][tT][oO][pP])
