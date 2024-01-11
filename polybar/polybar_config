@@ -85,7 +85,7 @@ font-4 = Noto Emoji::scale=10;
 
 modules-left = i3 gcal-launcher xwindow brightness_control notif-bar
 modules-center = date
-modules-right = pulseaudio memory cpu powermenu tray
+modules-right = player-mpris-tail memory cpu powermenu tray
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -400,6 +400,13 @@ warn-percentage = 75
 label-mounted = %mountpoint%:  %used% of %total%
 
 
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py -f '{icon} {:artist:t20:{artist}:}{:artist: - :}{:t20:{title}:}'
+tail = true
+click-middle = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py previous &
+click-right = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py next &
+click-left = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py play-pause &
 
 [settings]
 screenchange-reload = true

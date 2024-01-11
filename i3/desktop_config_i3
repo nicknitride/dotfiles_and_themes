@@ -229,7 +229,7 @@ bindsym $mod+ctrl+Right workspace next
 # i3 lock screen
 # keybinding to lock screen
 # bindsym $mod+Escape exec "i3lock -c 000000"
-bindsym $mod+Escape exec "i3lock -c 000000"
+bindsym $mod+Escape exec "i3lock -i /home/nicknitride/dotfiles_and_themes/i3/i3lock_walls/main.png"
 
 # auto lock the screen in 3 minutes
 exec "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000\""
@@ -265,6 +265,8 @@ for_window [class="Gnome-screenshot"] floating enable
 ## Rofimoji 
 set $alt Mod1
 bindsym $mod+$alt+space exec rofimoji
+
+
 
 # Needed Packages
 # Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar
