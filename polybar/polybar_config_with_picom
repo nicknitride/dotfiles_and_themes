@@ -216,10 +216,9 @@ expand-right = true
 
 label-open-background = ${colors.module-background}
 label-open = " 󰃠  Brightness "
-label-open-foreground = ${self.regular-text-color}
+label-open-foreground = ${colors.highlighted-text}
 
 label-close = "Close 󰅙 <"
-label-close-foreground = ${self.alert-red}
 label-separator =|  
 
 menu-0-0 = "  Day "
