@@ -115,9 +115,9 @@ label-close-foreground = ${self.alert-red}
 label-separator =|  
 
 menu-0-0 = "  Disable "
-menu-0-0-exec =  redshift -x
+menu-0-0-exec =  redshift -x && dunstify -h string:x-dunst-stack-tag:nightlightsettings "Night Light" "Disabled"
 menu-0-1 = " 󰊪 Enable "
-menu-0-1-exec = redshift -O 4500
+menu-0-1-exec = redshift -O 4500 && dunstify -h string:x-dunst-stack-tag:nightlightsettings "Night Light" "Enabled"
 ; https://linuxcommandlibrary.com/man/redshift
 
 [module/tray] 
