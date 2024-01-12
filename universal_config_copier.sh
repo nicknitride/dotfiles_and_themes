@@ -57,11 +57,11 @@ function homeSymArrayCall {
     done
 }
 
-LAPTOPAPPSINCLUDED=("alacritty" "polybar" "i3" "dunst")
+LAPTOPAPPSINCLUDED=("alacritty" "polybar" "i3" "dunst" "betterlockscreen")
 # Helps us navigate both the dotfile and config folders
-INTERNALFILENAMEARRAYLAPTOP=("alacritty.toml" "laptop_config" "laptop_config" "dunstrc")
+INTERNALFILENAMEARRAYLAPTOP=("alacritty.toml" "laptop_config" "laptop_config" "dunstrc" "betterlockscreenrc")
 # Filenames used inside the dotfiles folder
-LAPTOPDESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config" "dunstrc")
+LAPTOPDESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc")
 # Filenames used in the actual config folder
 
 APPSINCLUDEDDESKTOP=("alacritty" "polybar" "i3" "dunst" "betterlockscreen")
