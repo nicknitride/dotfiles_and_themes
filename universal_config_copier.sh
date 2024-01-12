@@ -69,7 +69,7 @@ DESKINTERNALFILENAME=("alacritty.toml" "polybar_config" "desktop_config_i3" "dun
 DESKDESTINATIONFILENAME=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc")
 
 APPDESKPICOM=("alacritty" "polybar" "i3" "dunst" "betterlockscreen" "picom")
-DESKPICOMINTERNALFILENAME=("alacritty.toml" "polybar_config_with_picom" "desktop_config_i3_with_picom" "dunstrc" "betterlockscreenrc" "picom.conf")
+DESKPICOMINTERNALFILENAME=("alacritty.toml" "polybar_config_with_picom" "desktop_config_i3_with_picom" "dunstrc_picom" "betterlockscreenrc" "picom.conf")
 DESKPICOMDESTINATIONFILENAME=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc" "picom.conf")
 
 

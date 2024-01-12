@@ -51,7 +51,7 @@
 ; highlighted-text=#000
 ;;;;;;;;;;; Picom
 background = #00000000
-module-background = #FFD8B1
+module-background = #7DFFFFFF
 regular-text-color = #d8dee9
 pref-text-color = #ebcb8b
 primary = #ffb52a
@@ -211,16 +211,12 @@ label-layout = %layout%
 ;;;;;;;;;;;;;;;;;;;;;;; Custom Modules;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;; dependencies - redshift, 
 [module/brightness_control]
-alert-red = #bf616a
-custom-back = #d8dee9
-custom-text-color = #000
-
 type = custom/menu
 expand-right = true
 
-label-open-background = ${self.custom-back}
+label-open-background = ${colors.module-background}
 label-open = " 󰃠  Brightness "
-label-open-foreground = ${self.custom-text-color}
+label-open-foreground = ${self.regular-text-color}
 
 label-close = "Close 󰅙 <"
 label-close-foreground = ${self.alert-red}
