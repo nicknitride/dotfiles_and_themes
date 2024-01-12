@@ -1,1 +1,1 @@
-pkill picom; picom -b &
+picom -b &
