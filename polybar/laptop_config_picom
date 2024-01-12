@@ -86,7 +86,9 @@ font-4 = Noto Emoji::scale=10;
 
 modules-left = i3 gcal-launcher xwindow notif-bar laptop_night_light
 modules-center = date
-modules-right = player-mpris-tail memory cpu  battery powermenu tray
+# modules-right = player-mpris-tail memory cpu  battery powermenu tray
+modules-right = player-mpris-tail battery powermenu tray # Reduced because it was taking up too much space
+
 
 wm-restack = i3
 
