@@ -64,6 +64,10 @@ INTERNALFILENAMEARRAYLAPTOP=("alacritty.toml" "laptop_config" "laptop_config" "d
 LAPTOPDESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc")
 # Filenames used in the actual config folder
 
+LAPTOPWITHPICOMAPPS=("alacritty" "polybar" "i3" "dunst" "betterlockscreen" "picom")
+INTERNALFILENAMELAPTOPPICOM=("alacritty.toml" "laptop_config_picom" "laptop_config_picom" "dunstrc" "betterlockscreenrc" "picom.conf")
+LAPTOPDESTINATIONFILENAMEARRAYPICOM=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc" "picom.conf") 
+
 APPSINCLUDEDDESKTOP=("alacritty" "polybar" "i3" "dunst" "betterlockscreen")
 DESKINTERNALFILENAME=("alacritty.toml" "polybar_config" "desktop_config_i3" "dunstrc" "betterlockscreenrc")
 DESKDESTINATIONFILENAME=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc")
@@ -94,8 +98,18 @@ read -p "Enter type [1. desktop/2. laptop/3. basic] : " USERANSWERTYPE
         fi 
     ;;
     [2] | [lL][aA][pP][tT][oO][pP])
-    homeSymArrayCall LAPTOPAPPSINCLUDED INTERNALFILENAMEARRAYLAPTOP LAPTOPDESTINATIONFILENAMEARRAY
-    echo "done"
+    read -p "Enable picom [y/n]? :" LAPTOPUSERANSWER
+    if [ "${LAPTOPUSERANSWER}" == "y" ] || [ "${LAPTOPUSERANSWER}" == "Y" ]
+        then
+            echo "Installing desktop config with picom"
+            homeSymArrayCall LAPTOPWITHPICOMAPPS INTERNALFILENAMELAPTOPPICOM LAPTOPDESTINATIONFILENAMEARRAYPICOM
+    elif [ "${LAPTOPUSERANSWER}" == "n" ] || [ "${LAPTOPUSERANSWER}" == "N" ]
+        then 
+            echo "Chosen the non-picom option"
+            homeSymArrayCall LAPTOPAPPSINCLUDED INTERNALFILENAMEARRAYLAPTOP LAPTOPDESTINATIONFILENAMEARRAY
+    else 
+            echo "Please enter a valid option"
+    fi
     ;;
     [3] | [bB][aA][sS][iI][cC])
     homeSymArrayCall BASICAPPS BASICINTERNALFILENAMES BASICDESTINATION
