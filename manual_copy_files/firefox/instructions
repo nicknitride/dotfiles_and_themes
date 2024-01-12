@@ -1,0 +1,3 @@
+1. enable legacy toolkit userchrome
+2. copy this file into .mozilla/firefox/*.default-release/chrome
+3. reload firefox
