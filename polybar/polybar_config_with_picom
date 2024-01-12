@@ -231,7 +231,7 @@ menu-0-2-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcut
 menu-0-3 = "🖥️"
 menu-0-3-exec = /home/nicknitride/dotfiles_and_themes/polybar/scripts/single-monitor-mode.sh
 menu-0-4 = "🖥️🖥️"
-menu-0-4 = /home/nicknitride/dotfiles_and_themes/polybar/scripts/dual-monitor-mode.sh
+menu-0-4-exec = /home/nicknitride/dotfiles_and_themes/polybar/scripts/dual-monitor-mode.sh
 
 [module/powermenu]
 type = custom/menu
