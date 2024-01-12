@@ -65,7 +65,7 @@ LAPTOPDESTINATIONFILENAMEARRAY=("alacritty.toml" "config" "config" "dunstrc" "be
 # Filenames used in the actual config folder
 
 LAPTOPWITHPICOMAPPS=("alacritty" "polybar" "i3" "dunst" "betterlockscreen" "picom")
-INTERNALFILENAMELAPTOPPICOM=("alacritty.toml" "laptop_config_picom" "laptop_config_picom" "dunstrc" "betterlockscreenrc" "picom.conf")
+INTERNALFILENAMELAPTOPPICOM=("alacritty.toml" "laptop_config_picom" "laptop_config_picom" "dunstrc_picom" "betterlockscreenrc" "picom.conf")
 LAPTOPDESTINATIONFILENAMEARRAYPICOM=("alacritty.toml" "config" "config" "dunstrc" "betterlockscreenrc" "picom.conf") 
 
 APPSINCLUDEDDESKTOP=("alacritty" "polybar" "i3" "dunst" "betterlockscreen")

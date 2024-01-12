@@ -35,19 +35,19 @@
 ; Brightness Module: redshift
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[settings]
-pseudo-transparency=true
+# [settings]
+# pseudo-transparency=true
 
 [colors]
-background = #000
-module-background = #FFD8B1
+background = #00000000
+module-background = #7DFFFFFF
 regular-text-color = #d8dee9
 pref-text-color = #ebcb8b
 primary = #ffb52a
 secondary = #b48ead
 tertiary = #5e81ac
 alert = #bf616a
-highlighted-text=#000
+highlighted-text=#FF000000
 
 [bar/bar]
 ; monitor = ${env:MONITOR:DP-1}
