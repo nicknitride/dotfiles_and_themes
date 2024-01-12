@@ -35,12 +35,12 @@
 ; Brightness Module: redshift
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-# [settings]
-# pseudo-transparency=true
+; [settings]
+; pseudo-transparency=true
 
 [colors]
 background = #00000000
-module-background = #7DFFFFFF
+module-background = #d8dee9
 regular-text-color = #d8dee9
 pref-text-color = #ebcb8b
 primary = #ffb52a
