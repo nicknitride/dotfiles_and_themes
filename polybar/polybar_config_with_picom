@@ -172,7 +172,6 @@ expand-right = true
 margin = 2 
 
 label-close = "Close 󰅙 <"
-label-close-foreground = ${self.alert-red}
 label-separator =|  
 
 menu-0-0 = " View Last "
