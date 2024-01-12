@@ -86,7 +86,7 @@ font-4 = Noto Emoji::scale=10;
 
 modules-left = i3 gcal-launcher xwindow notif-bar laptop_night_light
 modules-center = date
-modules-right = pulseaudio memory cpu  battery powermenu tray
+modules-right = player-mpris-tail memory cpu  battery powermenu tray
 
 wm-restack = i3
 
@@ -458,21 +458,17 @@ screenchange-reload = true
 ;compositing-border = over
 ;pseudo-transparency = false
 
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py -f '{icon} {:artist:t20:{artist}:}{:artist: - :}{:t20:{title}:}'
+tail = true
+click-middle = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py previous &
+click-right = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py next &
+click-left = ~/dotfiles_and_themes/polybar/scripts/player-mpris-tail.py play-pause &
+
 [global/wm]
 margin-top = 5
 margin-bottom = 5
 
 
 
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-; Only applies if <bar> is used
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
