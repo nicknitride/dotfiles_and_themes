@@ -97,7 +97,7 @@ font-4 = Noto Emoji::scale=10;
 
 modules-left = i3 gcal-launcher xwindow brightness_control notif-bar
 modules-center = date
-modules-right = player-mpris-tail memory cpu powermenu tray
+modules-right = player-mpris-tail powermenu tray
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -146,7 +146,7 @@ font-3 = fixed:pixelsize=10;1
 font-4 = Noto Emoji::scale=10;
 
 
-modules-left = i3 gcal-launcher xwindow
+modules-left = i3 gcal-launcher xwindow memory cpu
 modules-center = date
 modules-right = 
 
@@ -220,15 +220,18 @@ label-open-foreground = ${colors.highlighted-text}
 label-close = "Close 󰅙 <"
 label-separator =|  
 
-menu-0-0 = "  Day "
+menu-0-0 = "  "
 ; menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 10 18 --display 2
 menu-0-0-exec = ddcutil --disable-dynamic-sleep setvcp 10 12 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 74 --display 1 && redshift -x
-menu-0-1 = " 󰽧 Night "
+menu-0-1 = " 󰽧 "
 menu-0-1-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 30 --display 1 && redshift -x
-menu-0-2 = " 󰊪 Reading"
+menu-0-2 = " 󰊪 "
 menu-0-2-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -O 4500
 ; https://linuxcommandlibrary.com/man/redshift
-
+menu-0-3 = "🖥️"
+menu-0-3-exec = /home/nicknitride/dotfiles_and_themes/polybar/scripts/single-monitor-mode.sh
+menu-0-4 = "🖥️🖥️"
+menu-0-4 = /home/nicknitride/dotfiles_and_themes/polybar/scripts/dual-monitor-mode.sh
 
 [module/powermenu]
 type = custom/menu
