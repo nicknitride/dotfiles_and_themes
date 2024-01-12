@@ -207,7 +207,7 @@ bindsym $mod+Return mode "resize"
 
 ## Personal 
 bindsym $mod+b exec firefox
-bindsym $mod+f exec nemo
+bindsym $mod+f exec thunar
 bindsym $mod+c exec code
 # Monitor
 exec_always --no-startup-id ~/dotfiles_and_themes/arandr_i3.sh
@@ -270,11 +270,11 @@ bindsym XF86AudioNext exec "~/dotfiles_and_themes/polybar/scripts/player-mpris-t
 # Picom 
 exec_always --no-startup-id picom -b &
 bindsym $mod+Shift+x exec pkill picom
-bindsym $mod+Shift+p exec --no-startup-id picom -b
+bindsym $mod+Shift+p exec --no-startup-id picom -b &
 
 
 # Needed Packages
-# Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, nemo
+# Firefox, Alacritty, JetBrainsMono Nerd Font in /usr/share/fonts/, alacritty, polybar, thunar
 # Rofi, Nitrogen (Wallpaper Settings)
 # lxappearance - customize cursor
 # Polybar Wifi/Bluetooth/Sound
