@@ -80,7 +80,7 @@ function execConfigCopier {
 # Array of dependencies
 BASEANDGIT=("git" "picom" "i3" "vlc" "zsh" "bat" "qlipper" 
 "arandr" "redshift" "rofi" "polybar" "pasystray" "blueman" 
-"lxappearance" "lsd" "alacritty" "nitrogen" "gnome-screenshot" "thunar")
+"lxappearance" "lsd" "alacritty" "nitrogen" "gnome-screenshot" "thunar" "pip")
 DESKTOPDEPENDENCIES=("ddcutil")
 LAPTOPDEPENDENCIES=("brightnessctl" "gem" "tlp")
 
