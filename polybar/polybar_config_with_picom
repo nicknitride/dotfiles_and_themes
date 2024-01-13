@@ -214,7 +214,7 @@ type = custom/menu
 expand-right = true
 
 label-open-background = ${colors.module-background}
-label-open = " 󰃠  Brightness "
+label-open = " 󰃠  MonControl "
 label-open-foreground = ${colors.highlighted-text}
 
 label-close = "Close 󰅙 <"
@@ -228,9 +228,9 @@ menu-0-1-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcut
 menu-0-2 = " 󰊪 "
 menu-0-2-exec = ddcutil --disable-dynamic-sleep setvcp 10 0 --display 2 && ddcutil --disable-dynamic-sleep setvcp 10 0 --display 1 && redshift -O 4500
 ; https://linuxcommandlibrary.com/man/redshift
-menu-0-3 = "🖥️"
+menu-0-3 = " 🖥️ "
 menu-0-3-exec = /home/nicknitride/dotfiles_and_themes/polybar/scripts/single-monitor-mode.sh
-menu-0-4 = "🖥️🖥️"
+menu-0-4 = " 🖥️🖥️"
 menu-0-4-exec = /home/nicknitride/dotfiles_and_themes/polybar/scripts/dual-monitor-mode.sh
 
 [module/powermenu]
