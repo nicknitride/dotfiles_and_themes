@@ -81,7 +81,7 @@ BASICAPPS=("alacritty" "polybar" "i3" "dunst")
 BASICINTERNALFILENAMES=("alacritty.toml" "polybar_no_dependencies" "i3_no_dependencies" "dunstrc")
 BASICDESTINATION=("alacritty.toml" "config" "config" "dunstrc")
 
-read -p "Enter type [1. desktop/2. laptop/3. basic] : " USERANSWERTYPE
+read -p "Enter type [1. desktop/2. laptop/3. basic /4. cancel ] : " USERANSWERTYPE
     case $USERANSWERTYPE in
     [1] | [dD][eE][sS][kK][tT][oO][pP])
     read -p "with picom [y/n]? : " SECONDUSERANSWER
@@ -114,6 +114,9 @@ read -p "Enter type [1. desktop/2. laptop/3. basic] : " USERANSWERTYPE
     [3] | [bB][aA][sS][iI][cC])
     homeSymArrayCall BASICAPPS BASICINTERNALFILENAMES BASICDESTINATION
     echo "done"
+    ;;
+    [cC][aA][nN][cC][eE][lL])
+    echo "Cancelling config copy"
     ;;
     *)
     echo "Not a valid option"
