@@ -52,3 +52,6 @@ text = "#2e3440"
 
 [font.normal]
 family = "JetBrains Mono Nerd Font"
+
+[window]
+opacity = 0.8
