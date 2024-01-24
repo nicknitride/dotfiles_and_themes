@@ -250,9 +250,9 @@ exec "xautolock -detectsleep -time 5 -locker \"betterlockscreen -l blur\""
 bindsym $mod+Escape exec "betterlockscreen -l blur"
 
 # Picom 
-exec_always --no-startup-id picom -b &
-bindsym $mod+Shift+x exec pkill picom
-bindsym $mod+Shift+p exec --no-startup-id picom -b &
+# exec_always --no-startup-id picom -b &
+# bindsym $mod+Shift+x exec pkill picom
+# bindsym $mod+Shift+p exec --no-startup-id picom -b &
 
 # Laptop Dependency List:
 # Fusuma 
