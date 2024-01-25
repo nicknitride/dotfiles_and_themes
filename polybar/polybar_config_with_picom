@@ -165,7 +165,7 @@ tray-padding= 2
 [module/notif-bar]
 alert-red = #bf616a
 type=custom/menu
-label-open =" Notifs 󰂚 " 
+label-open ="  󰂚  " 
 label-open-background = ${colors.module-background}
 label-open-foreground = ${colors.highlighted-text}
 expand-right = true
@@ -212,9 +212,10 @@ label-layout = %layout%
 [module/brightness_control]
 type = custom/menu
 expand-right = true
+label-open-padding = 2
 
 label-open-background = ${colors.module-background}
-label-open = " 󰃠  MonControl "
+label-open =" 󰃠 "
 label-open-foreground = ${colors.highlighted-text}
 
 label-close = "Close 󰅙 <"
@@ -344,9 +345,10 @@ label = %gb_used%
 type = internal/date
 interval = 5
 
-date = "%a,%b. %d"
+date-alt ="%a,%b. %d"
 
-time ="%I:%M %p"
+time = "%I:%M %p"
+time-alt= "%I:%M %p |"
 
 format = 󰥔 <label>
 format-foreground= #ebcb8b
