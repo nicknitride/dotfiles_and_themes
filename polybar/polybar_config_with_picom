@@ -214,7 +214,7 @@ type = custom/menu
 expand-right = true
 
 label-open-background = ${colors.module-background}
-label-open = " 󰃠  MonControl "
+label-open = " 󰃠  Monitor "
 label-open-foreground = ${colors.highlighted-text}
 
 label-close = "Close 󰅙 <"
@@ -344,9 +344,10 @@ label = %gb_used%
 type = internal/date
 interval = 5
 
-date = "%a,%b. %d"
+date-alt = "%a,%b. %d"
 
-time ="%I:%M %p"
+time = "%I:%M %p"
+time-alt= "%I:%M %p"
 
 format = 󰥔 <label>
 format-foreground= #ebcb8b
