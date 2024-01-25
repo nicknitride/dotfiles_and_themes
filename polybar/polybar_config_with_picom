@@ -344,10 +344,10 @@ label = %gb_used%
 type = internal/date
 interval = 5
 
-date-alt = "%a,%b. %d"
+date-alt ="%a,%b. %d"
 
 time = "%I:%M %p"
-time-alt= "%I:%M %p"
+time-alt= "%I:%M %p |"
 
 format = 󰥔 <label>
 format-foreground= #ebcb8b
