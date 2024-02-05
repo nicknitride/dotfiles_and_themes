@@ -39,7 +39,7 @@
 ; pseudo-transparency=true
 
 [colors]
-background = #00000000
+background = #000000
 module-background = #d8dee9
 regular-text-color = #d8dee9
 pref-text-color = #ebcb8b
