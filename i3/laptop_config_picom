@@ -243,6 +243,12 @@ for_window [class="Gnome-screenshot"] floating enable
 exec "xautolock -detectsleep -time 5 -locker \"betterlockscreen -l blur\""
 bindsym $mod+Escape exec "betterlockscreen -l"
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # Picom 
 # exec_always --no-startup-id picom -b &
 # bindsym $mod+Shift+x exec pkill picom
